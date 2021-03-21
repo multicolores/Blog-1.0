@@ -9,18 +9,16 @@ class BlogRoll extends React.Component {
     const { edges: posts } = data.allMarkdownRemark
 
     return (
-      <div className="columns is-multiline">
+      <div>
         {posts &&
           posts.map(({ node: post }) => (
-            <div className="is-parent column is-6" key={post.id}>
-              <article
-                className={`blog-list-item tile is-child box notification ${post.frontmatter.featuredpost ? 'is-featured' : ''
-                  }`}
-              >
+            <div key={post.id}>
+              <article>
                 <div className="blogpost_text">
                   <Link to={post.fields.slug}
                   >
                     <h3>{post.frontmatter.title}</h3>
+
                   </Link>
                   <span>
                     {post.frontmatter.date}

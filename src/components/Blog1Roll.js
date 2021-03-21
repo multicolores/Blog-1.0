@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 
-class TestBlog2 extends React.Component {
+class TestBlog extends React.Component {
   render() {
     const { data } = this.props
     const { edges: posts } = data.allMarkdownRemark
@@ -14,7 +14,7 @@ class TestBlog2 extends React.Component {
           posts.map(({ node: post }) => (
             <div key={post.id}>
 
-              {post.fields.slug.indexOf("blog2") > 0 ? (
+              {post.fields.slug.indexOf("blog1") > 0 ? (
                 <article>
                   <div className="blogpost_text">
                     <Link to={post.fields.slug}
@@ -58,7 +58,7 @@ class TestBlog2 extends React.Component {
   }
 }
 
-TestBlog2.propTypes = {
+TestBlog.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.array,
@@ -69,7 +69,7 @@ TestBlog2.propTypes = {
 export default () => (
   <StaticQuery
     query={graphql`
-      query TestBlog2Query {
+      query TestBlogQuery {
         allMarkdownRemark(
           sort: { order: DESC, fields: [frontmatter___date] }
           filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
@@ -101,6 +101,6 @@ export default () => (
         }
       }
     `}
-    render={(data, count) => <TestBlog2 data={data} count={count} />}
+    render={(data, count) => <TestBlog data={data} count={count} />}
   />
 )
