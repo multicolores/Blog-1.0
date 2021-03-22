@@ -42,19 +42,19 @@ const Navbar = class extends React.Component {
             </Link>
           </div>
           <div className="navbar-links ">
-            <Link className="navbar-item" to="/Blog1Page">
+            <Link className="link" to="/Blog1Page">
               Blog 1
               </Link>
-            <Link className="navbar-item" to="/Blog2Page">
+            <Link className="link" to="/Blog2Page">
               Blog 2
               </Link>
-            <Link className="navbar-item" to="/blog">
+            <Link className="link" to="/blog">
               Blog
               </Link>
-            <Link className="navbar-item" to="/contact">
+            <Link className="link" to="/contact">
               Contact
               </Link>
-            <Link className="navbar-item" to="/contact/examples">
+            <Link className="link" to="/contact/examples">
               Form Examples
               </Link>
           </div>

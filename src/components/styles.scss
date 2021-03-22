@@ -4,7 +4,8 @@ $font-color: rgb(20, 20, 20);
 $font-color2: #babbbe;
 
 $primary-color: #e4bad4;
-$primary-color2: #7868e6;
+//$primary-color2: #7868e6;
+$primary-color2: #9C8CFF;
 
 * {
     margin: 0;
@@ -67,6 +68,27 @@ span{
         background: $primary-color;
     }
 }
+
+.link{
+    position: relative;
+    &:hover{
+        &::after{
+            width: 100%;
+        }
+    }
+    &::after{
+        content: '';
+        z-index: -1;
+        position: absolute;
+        left: 0;
+        bottom: -0.25rem;
+        background: $primary-color2;
+        width: 0%;
+        height: 0.3rem;
+        transition: .3s;
+    }
+}
+
 //! NAV
 nav{
     height: 10vh;
@@ -113,5 +135,40 @@ header{
     }
     .post-image{
         margin: 5% 0;
+    }
+}
+
+
+
+//! FOOTER 
+footer{
+    height: 30vh;
+    .container{
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .content{
+            display: flex;
+            gap: 20px;
+            img{
+                width: 2em;
+                height: 2em;
+            }
+        }
+        .menu ul li{
+            list-style: none;
+            margin: 5px;
+            font-size: 1.2em;
+            position: relative;
+        }
+        .logo{
+            font-size: 5em;
+            font-weight: bold;
+            transition: .3s;
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
     }
 }
