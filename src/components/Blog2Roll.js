@@ -27,18 +27,15 @@ class TestBlog2 extends React.Component {
                     <p>
                       {post.frontmatter.description}
                     </p>
-                    <h3>{post.frontmatter.videoUrl}</h3>
-                    {post.frontmatter.videoUrl ? (
-                      <iframe width="420" height="315"
-                        src={post.frontmatter.videoUrl}>
-                      </iframe>
-                    ) : null}
+
                     <div dangerouslySetInnerHTML={{ __html: post.html }}>
                     </div>
                     {/* <Link className="button" to={post.fields.slug}>
                     Keep Reading
                    </Link> */}
-
+                    {post.frontmatter.videoUrl ? (
+                      <iframe src={post.frontmatter.videoUrl}> </iframe>
+                    ) : null}
                   </div>
                 </article>
 

@@ -142,6 +142,13 @@ header{
             width: 100%;
         }
     }
+    iframe{
+        width: 70%;
+        aspect-ratio: 16/9;
+        margin: 5% 0;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
 }
 
 
