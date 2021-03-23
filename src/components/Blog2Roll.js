@@ -27,22 +27,17 @@ class TestBlog2 extends React.Component {
                     <p>
                       {post.frontmatter.description}
                     </p>
-                    {post.frontmatter.featuredimage ? (
-                      <div className="post-image">
-                        <PreviewCompatibleImage
-                          imageInfo={{
-                            image: post.frontmatter.featuredimage,
-                            alt: `featured image thumbnail for post ${post.frontmatter.title}`,
-                          }}
-                        />
-                      </div>
+                    <h3>{post.frontmatter.videoUrl}</h3>
+                    {post.frontmatter.videoUrl ? (
+                      <iframe width="420" height="315"
+                        src={post.frontmatter.videoUrl}>
+                      </iframe>
                     ) : null}
-
                     <div dangerouslySetInnerHTML={{ __html: post.html }}>
                     </div>
                     {/* <Link className="button" to={post.fields.slug}>
                     Keep Reading
-                  </Link> */}
+                   </Link> */}
 
                   </div>
                 </article>
@@ -87,6 +82,7 @@ export default () => (
                 date(formatString: "MMMM DD, YYYY")
                 featuredpost
                 description
+                videoUrl
                 featuredimage {
                   childImageSharp {
                     fluid(maxWidth: 120, quality: 100) {

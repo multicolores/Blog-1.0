@@ -4,8 +4,8 @@ $font-color: rgb(20, 20, 20);
 $font-color2: #babbbe;
 
 $primary-color: #e4bad4;
-//$primary-color2: #7868e6;
-$primary-color2: #9C8CFF;
+$primary-color2: #7868e6;
+//$primary-color2: #9C8CFF;
 
 * {
     margin: 0;
@@ -81,13 +81,14 @@ span{
         z-index: -1;
         position: absolute;
         left: 0;
-        bottom: -0.25rem;
+        bottom: -0.5rem;
         background: $primary-color2;
         width: 0%;
         height: 0.3rem;
         transition: .3s;
     }
 }
+
 
 //! NAV
 nav{
@@ -136,6 +137,11 @@ header{
     .post-image{
         margin: 5% 0;
     }
+    .innered-html{
+        img{
+            width: 100%;
+        }
+    }
 }
 
 
@@ -158,8 +164,8 @@ footer{
         }
         .menu ul li{
             list-style: none;
-            margin: 5px;
-            font-size: 1.2em;
+            margin: 1.2rem;
+            font-size: 1.1em;
             position: relative;
         }
         .logo{

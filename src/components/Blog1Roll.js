@@ -27,7 +27,7 @@ class TestBlog extends React.Component {
                     <p>
                       {post.frontmatter.description}
                     </p>
-                    {post.frontmatter.featuredimage ? (
+                    {/* {post.frontmatter.featuredimage ? (
                       <div className="post-image">
                         <PreviewCompatibleImage
                           imageInfo={{
@@ -36,13 +36,13 @@ class TestBlog extends React.Component {
                           }}
                         />
                       </div>
-                    ) : null}
+                    ) : null} */}
 
-                    <div dangerouslySetInnerHTML={{ __html: post.html }}>
+                    <div dangerouslySetInnerHTML={{ __html: post.html }} className="innered-html">
                     </div>
                     {/* <Link className="button" to={post.fields.slug}>
                     Keep Reading
-                  </Link> */}
+                   </Link> */}
 
                   </div>
                 </article>
