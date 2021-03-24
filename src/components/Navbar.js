@@ -47,16 +47,10 @@ const Navbar = class extends React.Component {
               </Link>
             <Link className="link" to="/Blog2Page">
               Blog 2
-              </Link>
-            <Link className="link" to="/blog">
-              Blog
-              </Link>
-            <Link className="link" to="/contact">
-              Contact
-              </Link>
-            <Link className="link" to="/contact/examples">
-              Form Examples
-              </Link>
+            </Link>
+            <Link className="link" to="/admin">
+              Connexion
+            </Link>
           </div>
         </div>
       </nav>

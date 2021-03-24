@@ -27,7 +27,16 @@ class TestBlog2 extends React.Component {
                     <p>
                       {post.frontmatter.description}
                     </p>
-
+                    {post.frontmatter.featuredimage ? (
+                      <div className="post-image">
+                        <PreviewCompatibleImage
+                          imageInfo={{
+                            image: post.frontmatter.featuredimage,
+                            alt: `Image pour le post ${post.frontmatter.title}`,
+                          }}
+                        />
+                      </div>
+                    ) : null}
                     <div dangerouslySetInnerHTML={{ __html: post.html }}>
                     </div>
                     {/* <Link className="button" to={post.fields.slug}>
