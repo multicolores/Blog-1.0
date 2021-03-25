@@ -219,11 +219,14 @@ header{
         width: 100%;
         padding: 5% 0;
     }
-    .image{
-        width: 150%;
-        height: 200px;
-        transform: translateX(-10%);
+    @media (max-width: 500px) {
+        .image{
+            width: 150%;
+            height: 200px;
+            transform: translateX(-10%);
+        }
     }
+
 }
 
 
