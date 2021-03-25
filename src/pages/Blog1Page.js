@@ -6,7 +6,7 @@ import Blog1Roll from '../components/Blog1Roll'
 
 const Blog1 = () => (
     <Layout>
-        <div>
+        <div className="blogPost_container">
             <Blog1Roll />
         </div>
     </Layout>

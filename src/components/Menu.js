@@ -47,7 +47,7 @@ const Menu = () => {
         setDisabled(!disabled);
         setTimeout(() => {
             setDisabled(false);
-        }, 300);
+        }, 0);
     };
 
     useEffect(() => {

@@ -27,13 +27,14 @@ p{
     font-size: 1em;
     line-height: 1.6;
     color: rgba(0, 0, 0, 0.705);
+    letter-spacing: 1px;
 }
 h1,h2,h3{
     color: #191919;
 }
 h1{
     font-size: 5em;
-    @media (max-width: 500px) {
+    @media (max-width: 700px) {
         font-size: 15vw;
     }
 }
@@ -60,7 +61,7 @@ span{
     padding-right: 17vw;
     max-width: 1400px;
     margin: 0 auto;
-    @media (max-width: 500px) {
+    @media (max-width: 700px) {
         padding-left: 10vw;
         padding-right: 10vw;
     }
@@ -106,6 +107,11 @@ span{
 //! NAV
 nav{
     height: 10vh;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: white;
+    z-index: 3;
     .container{
         display: flex;
         justify-content: space-between;
@@ -118,7 +124,7 @@ nav{
             }
         }
         .navbar-links{
-            @media (max-width: 500px) {
+            @media (max-width: 700px) {
                 display: none;
             }
             display: flex;
@@ -131,22 +137,29 @@ nav{
 //! MENU telephone
 .button_menu{
     display: none;
-    @media (max-width: 500px) {
+    @media (max-width: 700px) {
         display: block;
     }
     z-index: 5;
     position: fixed;
     // right: 10vw;
     // top: 7vw;
-    right: -3vw;
-    top: -3vw;
-    background: white;
-    padding: 10vw;
-    border-bottom-left-radius: 70%;
+    right: 25px;
+    top: 25px;
+    background: none;
+    // background: white;
+    // padding: 10vw;
+    // border-bottom-left-radius: 70%;
     border: none;
     font-size: 1em;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
+    outline: none;
+    transition: .3s;
+    &:active{
+        opacity: 0;
+        transform: translateY(-10%);
+    }
 }
 .nav_menu{
     position: fixed;
@@ -162,9 +175,10 @@ nav{
         align-items: center;
         flex-direction: column;
         .logo{
-            font-size: 10vw;
+            font-size: 25vw;
+            letter-spacing: 15px;
             font-weight: bold;
-            margin-bottom: 40%;
+            margin-bottom: 20%;
         }
         .links_container{
             display: flex;
@@ -176,13 +190,14 @@ nav{
                 letter-spacing: 4px;
                 font-size: 1.3em;
                 position: relative;
+                color: $primary-color2;
                 &::before{
                     content: '';
                     position: absolute;
                     left: 0;
                     top: 50%;
                     transform: translate(-30px, -50%);
-                    background: black;
+                    background: $primary-color2;
                     opacity: .4;
                     width: 20px;
                     height: 1px;
@@ -193,7 +208,7 @@ nav{
                     right: 0;
                     top: 50%;
                     transform: translate(30px, -50%);
-                    background: black;
+                    background: $primary-color2;
                     opacity: .4;
                     width: 20px;
                     height: 1px;
@@ -208,6 +223,8 @@ nav{
 //! HEADER
 header{
     margin: 15% 0;
+    margin-top: 20vh;
+
     h1{
         // margin-top: 15%;
         font-size: 6.5em;
@@ -219,11 +236,14 @@ header{
         width: 100%;
         padding: 5% 0;
     }
-    @media (max-width: 500px) {
+    @media (max-width: 700px) {
         .image{
             width: 150%;
             height: 200px;
             transform: translateX(-10%);
+        }
+        p{
+            padding: 20% 0;
         }
     }
 
@@ -231,9 +251,12 @@ header{
 
 
 //! Blog Post
+.blogPost_container{
+    margin-top: 20vh;
+}
 .blogpost_text{
     margin: 10% 0;
-    @media (max-width: 500px) {
+    @media (max-width: 700px) {
         margin: 30% 0;
         p{
             margin-top: 5%;
@@ -241,7 +264,7 @@ header{
     }
     p{
         margin-top: 2%;
-        @media (max-width: 500px) {
+        @media (max-width: 700px) {
             margin-top: 10%;
         }
         //margin-bottom: 1em;
@@ -260,7 +283,7 @@ header{
         margin: 5% 0;
         margin-left: 50%;
         transform: translateX(-50%);
-        @media (max-width: 500px) {
+        @media (max-width: 700px) {
             width: 100%;
         }
     }
@@ -271,7 +294,7 @@ header{
 //! FOOTER 
 footer{
     height: 30vh;
-    @media (max-width: 500px) {
+    @media (max-width: 700px) {
         height: 50vh;
     }
     .container{
@@ -279,7 +302,7 @@ footer{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        @media (max-width: 500px) {
+        @media (max-width: 700px) {
             flex-direction: column-reverse;
         }
         .content{
