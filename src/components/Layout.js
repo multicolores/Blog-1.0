@@ -2,6 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
+import Menu from '../components/Menu'
 //import './all.sass'
 import './styles.scss'
 import useSiteMetadata from './SiteMetadata'
@@ -50,6 +51,7 @@ const TemplateWrapper = ({ children }) => {
         />
       </Helmet>
       <Navbar />
+      <Menu />
       <div className="container">{children}</div>
       <Footer />
     </div>

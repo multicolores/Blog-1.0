@@ -13,8 +13,13 @@ $primary-color2: #7868e6;
     box-sizing: border-box;
   }
 
+html{
+    overflow-x: hidden;
+}
+
 body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    overflow-x: hidden;
 }
 
 
@@ -28,6 +33,9 @@ h1,h2,h3{
 }
 h1{
     font-size: 5em;
+    @media (max-width: 500px) {
+        font-size: 15vw;
+    }
 }
 h2{
     font-size: 3.5em;
@@ -52,7 +60,12 @@ span{
     padding-right: 17vw;
     max-width: 1400px;
     margin: 0 auto;
+    @media (max-width: 500px) {
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
 }
+
 .button{
     position: relative;
     font-size: 1.3em;
@@ -105,6 +118,9 @@ nav{
             }
         }
         .navbar-links{
+            @media (max-width: 500px) {
+                display: none;
+            }
             display: flex;
             gap: 20px;
         }
@@ -112,17 +128,101 @@ nav{
 
 }
 
-//! HEADER
+//! MENU telephone
+.button_menu{
+    display: none;
+    @media (max-width: 500px) {
+        display: block;
+    }
+    z-index: 5;
+    position: fixed;
+    // right: 10vw;
+    // top: 7vw;
+    right: -3vw;
+    top: -3vw;
+    background: white;
+    padding: 10vw;
+    border-bottom-left-radius: 70%;
+    border: none;
+    font-size: 1em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+}
+.nav_menu{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 4;
+    .menu_container{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .logo{
+            font-size: 10vw;
+            font-weight: bold;
+            margin-bottom: 40%;
+        }
+        .links_container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 40px;
+            a{  
+                letter-spacing: 4px;
+                font-size: 1.3em;
+                position: relative;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translate(-30px, -50%);
+                    background: black;
+                    opacity: .4;
+                    width: 20px;
+                    height: 1px;
+                }
+                &::after{
+                    content: '';
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    transform: translate(30px, -50%);
+                    background: black;
+                    opacity: .4;
+                    width: 20px;
+                    height: 1px;
+                }
+            }
+        }
+    }
 
+}
+
+
+//! HEADER
 header{
     margin: 15% 0;
     h1{
         // margin-top: 15%;
         font-size: 6.5em;
+        @media (max-width: 500px) {
+            font-size: 20vw;
+        }
     }
     p{
         width: 100%;
         padding: 5% 0;
+    }
+    .image{
+        width: 150%;
+        height: 200px;
+        transform: translateX(-10%);
     }
 }
 
@@ -130,8 +230,17 @@ header{
 //! Blog Post
 .blogpost_text{
     margin: 10% 0;
+    @media (max-width: 500px) {
+        margin: 30% 0;
+        p{
+            margin-top: 5%;
+        }
+    }
     p{
         margin-top: 2%;
+        @media (max-width: 500px) {
+            margin-top: 10%;
+        }
         //margin-bottom: 1em;
     }
     .post-image{
@@ -148,6 +257,9 @@ header{
         margin: 5% 0;
         margin-left: 50%;
         transform: translateX(-50%);
+        @media (max-width: 500px) {
+            width: 100%;
+        }
     }
 }
 
@@ -156,11 +268,17 @@ header{
 //! FOOTER 
 footer{
     height: 30vh;
+    @media (max-width: 500px) {
+        height: 50vh;
+    }
     .container{
         height: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        @media (max-width: 500px) {
+            flex-direction: column-reverse;
+        }
         .content{
             display: flex;
             gap: 20px;
