@@ -43,7 +43,7 @@ class TestBlog2 extends React.Component {
                     Keep Reading
                    </Link> */}
                     {post.frontmatter.videoUrl ? (
-                      <iframe src={post.frontmatter.videoUrl}> </iframe>
+                      <iframe src={post.frontmatter.videoUrl} allow="fullscreen"> </iframe>
                     ) : null}
                   </div>
                 </article>
